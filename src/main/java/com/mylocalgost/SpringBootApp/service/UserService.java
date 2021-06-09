@@ -1,6 +1,7 @@
 package com.mylocalgost.SpringBootApp.service;
 
 
+import com.mylocalgost.SpringBootApp.models.Role;
 import com.mylocalgost.SpringBootApp.models.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,9 +19,11 @@ public interface UserService extends UserDetailsService {
 
     public boolean add(User user);
 
-    public boolean update(long id, User user);
+    public boolean update(long id, User user, String role);
 
     public boolean delete(long id);
 
     public UserDetails loadUserByUsername(String username);
+
+    public List<Role> getAllRoles();
 }
