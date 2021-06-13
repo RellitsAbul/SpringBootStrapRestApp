@@ -9,7 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
-import java.util.Set;
 
 @Component
 @Transactional
@@ -42,19 +41,14 @@ public class JpaUserDaoImpl implements UserDao {
     }
 
     @Override
-    public void update(long id, User updateUser) {
-        User userToBeUpdater = getById(id);
+    public void update(User updateUser) {
+        User userToBeUpdater = getById(updateUser.getId());
         userToBeUpdater.setName(updateUser.getName());
         userToBeUpdater.setLastName(updateUser.getLastName());
         userToBeUpdater.setEmail(updateUser.getEmail());
+        userToBeUpdater.setRoles(updateUser.getRoles());
     }
-    public void update(long id, User updateUser, Set<Role> newRoles) {
-        User userToBeUpdater = getById(id);
-        userToBeUpdater.setName(updateUser.getName());
-        userToBeUpdater.setLastName(updateUser.getLastName());
-        userToBeUpdater.setEmail(updateUser.getEmail());
-        userToBeUpdater.setRoles(newRoles);
-    }
+
 
     @Override
     public void delete(long id) {

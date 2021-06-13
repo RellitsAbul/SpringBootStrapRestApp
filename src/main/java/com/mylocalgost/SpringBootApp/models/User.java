@@ -97,16 +97,7 @@ public class User implements UserDetails {
     }
 
     public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
-    public void setRoles(Role role) {
-        this.roles.add(role);
-    }
-
-    public void setRoles(String role) {
-        if (role != null)
-            this.roles.add(new Role(2L, role));
+            this.roles = roles;
     }
 
     public Long getId() {

@@ -19,7 +19,7 @@ public interface UserService extends UserDetailsService {
 
     public boolean add(User user);
 
-    public boolean update(long id, User user, String role);
+    public boolean update(User user);
 
     public boolean delete(long id);
 

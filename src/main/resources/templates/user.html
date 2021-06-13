@@ -12,7 +12,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <div class="navbar-text">
-                <span class="navbar-brand mb-0 h1" th:text="${user.getUsername()}">Панель навигации</span>
+                <span class="navbar-brand mb-0 h1"  sec:authentication="name">Панель навигации</span>
                 <span class="navbar-brand mb-0 h1">with roles:</span>
                 <span class="navbar-brand mb-0 h1" sec:authorize="hasAuthority('ROLE_ADMIN')">ADMIN </span>
                 <span class="navbar-brand mb-0 h1" sec:authorize="hasAuthority('ROLE_USER')">USER </span>
@@ -52,18 +52,16 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Last</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Username</th>
                                 <th scope="col">Role</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td th:text="${user.getId()}"></td>
-                                <td th:text="${user.getName()}"></td>
-                                <td th:text="${user.getLastName()}"></td>
-                                <td th:text="${user.getEmail()}"></td>
-                                <td th:text="${user.getUsername()}"></td>
-                                <td th:text="${user.getRoles()}"></td>
+                                <th><span th:text="${user.getId()}"></span></th>
+                                <th><span th:text="${user.getName()}"></span></th>
+                                <th><span th:text="${user.getLastName()}"></span></th>
+                                <th><span th:text="${user.getEmail()}"></span></th>
+                                <th><span sec:authentication="principal.authorities"></span></th>
                             </tr>
                             </tbody>
                         </table>
