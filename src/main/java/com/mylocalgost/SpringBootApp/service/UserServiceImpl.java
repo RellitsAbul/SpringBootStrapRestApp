@@ -1,6 +1,7 @@
 package com.mylocalgost.SpringBootApp.service;
 
 
+import com.mylocalgost.SpringBootApp.FirstInitialization;
 import com.mylocalgost.SpringBootApp.dao.UserDao;
 import com.mylocalgost.SpringBootApp.models.Role;
 import com.mylocalgost.SpringBootApp.models.User;

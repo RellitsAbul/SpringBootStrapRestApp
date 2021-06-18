@@ -5,7 +5,6 @@ import com.mylocalgost.SpringBootApp.models.Role;
 import com.mylocalgost.SpringBootApp.models.User;
 
 import java.util.List;
-import java.util.Set;
 
 public interface UserDao {
     void add(User user);
@@ -22,5 +21,7 @@ public interface UserDao {
     User getByUsername(String username);
 
     public List<Role> getAllRoles();
+
+    public void addRolesInBD();
 }
 

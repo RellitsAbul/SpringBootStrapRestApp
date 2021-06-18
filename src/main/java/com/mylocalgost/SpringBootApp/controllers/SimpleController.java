@@ -1,6 +1,5 @@
 package com.mylocalgost.SpringBootApp.controllers;
 import com.mylocalgost.SpringBootApp.models.User;
-import com.mylocalgost.SpringBootApp.service.UserService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

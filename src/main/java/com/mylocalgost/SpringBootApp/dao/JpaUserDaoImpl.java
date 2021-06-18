@@ -4,7 +4,6 @@ import com.mylocalgost.SpringBootApp.models.Role;
 import com.mylocalgost.SpringBootApp.models.User;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -17,9 +16,14 @@ public class JpaUserDaoImpl implements UserDao {
     EntityManager entityManager;
 
     @Override
+    public void addRolesInBD(){
+        entityManager.persist(new Role(1L,"ROLE_USER"));
+        entityManager.persist(new Role(2L,"ROLE_ADMIN"));
+    }
+
+    @Override
     public void add(User user) {
         entityManager.persist(user);
-
     }
 
     @Override
